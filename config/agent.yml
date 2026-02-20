@@ -1,6 +1,6 @@
-jira_base_url: "https://your-domain.atlassian.net"
-project_key: "PROJ"
+jira_base_url: "https://testatlassianforge123.atlassian.net"
+project_key: "FATP"
 board_id: 1
-confluence_space_key: "TEAM"
-sprint_log_issue_key: "PROJ-100"
+confluence_space_key: "MFCS"
+sprint_log_issue_key: "FATP-1"
 stale_days: 3
