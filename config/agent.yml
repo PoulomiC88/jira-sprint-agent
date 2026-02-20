@@ -1,0 +1,6 @@
+jira_base_url: "https://your-domain.atlassian.net"
+project_key: "PROJ"
+board_id: 1
+confluence_space_key: "TEAM"
+sprint_log_issue_key: "PROJ-100"
+stale_days: 3

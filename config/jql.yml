@@ -1,0 +1,48 @@
+queries:
+  active_sprint_issues: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    ORDER BY priority DESC
+
+  stale_issues: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND status != Done
+    AND updated <= "-{stale_days}d"
+    ORDER BY updated ASC
+
+  blocked_issues: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND status = Blocked
+    ORDER BY priority DESC
+
+  in_progress_no_assignee: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND status = "In Progress"
+    AND assignee is EMPTY
+
+  done_issues: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND status = Done
+    ORDER BY resolutiondate DESC
+
+  not_done_issues: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND status != Done
+    ORDER BY priority DESC
+
+  readiness_no_estimate: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND (story_points is EMPTY OR story_points = 0)
+    ORDER BY priority DESC
+
+  readiness_no_assignee: >-
+    project = {project_key}
+    AND sprint in openSprints()
+    AND assignee is EMPTY
+    ORDER BY priority DESC
